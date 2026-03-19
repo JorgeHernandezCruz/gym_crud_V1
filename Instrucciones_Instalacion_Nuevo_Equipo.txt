@@ -1,0 +1,56 @@
+=== CÓMO INSTALAR EL SISTEMA DEL GIMNASIO EN UN EQUIPO NUEVO ===
+
+Este documento contiene los pasos detallados para instalar todo lo necesario y dejar el sistema funcionando desde cero en la computadora del cliente.
+
+-----------------------------------------------------------
+PARTE 1: INSTALAR LAS HERRAMIENTAS NECESARIAS
+-----------------------------------------------------------
+1. Instalar XAMPP (Para la base de datos MySQL y el servidor PHP)
+   - Descarga XAMPP desde su sitio oficial (https://www.apachefriends.org/es/index.html)
+   - Instálalo dejando las opciones por defecto (asegurándote de que Apache y MySQL estén marcados).
+   - Abre el "XAMPP Control Panel".
+   - Haz clic en el botón "Start" de los módulos de "Apache" y "MySQL".
+
+2. Instalar Node.js (Para ejecutar el Front-End en React/Vite)
+   - Descarga Node.js desde su sitio oficial (https://nodejs.org/es/). Preferible la versión LTS.
+   - Instálalo dejando todas las opciones por defecto (Siguiente > Siguiente > Instalar).
+
+-----------------------------------------------------------
+PARTE 2: CONFIGURAR LA BASE DE DATOS (BACK-END)
+-----------------------------------------------------------
+1. Con XAMPP abierto (y Apache / MySQL en verde), abre tu navegador y ve a:
+   http://localhost/phpmyadmin
+
+2. Crear la base de datos:
+   - Haz clic en "Nueva" (menú lateral izquierdo).
+   - Nombre de la base de datos: gym_crud
+   - Cotejamiento (Collation): utf8mb4_general_ci o utf8_spanish_ci
+   - Haz clic en "Crear".
+
+3. Importar las tablas:
+   - Selecciona la base de datos "gym_crud" recién creada a la izquierda.
+   - Ve a la pestaña "Importar" en el menú superior.
+   - En "Archivo a importar", haz clic en "Seleccionar archivo" (Choose File).
+   - Busca en los archivos de este proyecto el documento llamado "database.sql" (o el respaldo más reciente "gym_crud_backup.sql").
+   - Baja hasta el final de la página y haz clic en "Importar" o "Continuar".
+
+4. Colocar los archivos de PHP en XAMPP:
+   - Ve a la carpeta de instalación de XAMPP (normalmente C:\xampp\htdocs\).
+   - Crea ahí una nueva carpeta llamada "backend".
+   - Copia el archivo "api.php" de nuestro proyecto y pégalo dentro de esa carpeta de XAMPP (C:\xampp\htdocs\backend\api.php).
+
+*(Nota: Si decides llamar a la carpeta diferente, deberás actualizar la ruta de "API_URL" en el código en src/context/GymContext.jsx y src/context/AuthContext.jsx antes del Paso 3).*
+
+-----------------------------------------------------------
+PARTE 3: PREPARAR EL SISTEMA (FRONT-END)
+-----------------------------------------------------------
+1. Abrir la terminal, consola de comandos (cmd) o PowerShell.
+2. Navegar hasta la carpeta donde pegaste todos los archivos del código del gimnasio.
+   (Ejemplo: cd C:\Users\Cliente\Desktop\GymCrud)
+3. Ejecutar el comando para instalar todas las dependencias del proyecto:
+   npm install
+
+-----------------------------------------------------------
+PARTE 4: GENERAR LA VERSIÓN FINAL Y CREAR EL ACCESO DIRECTO
+-----------------------------------------------------------
+Sigue las instrucciones descritas en el archivo "Instrucciones_Ejecucion_Cliente.txt" para compilar el proyecto (crear la carpeta dist) y dejarle el botón de "Abrir_Gym" al cliente.

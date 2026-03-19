@@ -1,0 +1,7 @@
+Agregar busqueda por usuario nombre y apellido y telefono
+Agregar fechas de vencimiento y que se muestren en rojo los que vencen en menos de 5 dias 
+Que los ids de registro sean consecutivos y una ventana especifica para el registro de trabajadores 
+agregar un modulo solo para visitas con su historial aparte historial de visitas 
+que permita buscar por nombre y apellido y telefono y fecha de registro 
+Añadir al modulo de trabajador un corte de caja cuanto vendio durante el dia 
+Sumar lo registrado de visitas en el dashboard de administracion 

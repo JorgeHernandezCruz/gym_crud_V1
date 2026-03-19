@@ -1,0 +1,32 @@
+=== CÓMO EJECUTAR EL SISTEMA SIN USAR "npm run dev" ===
+
+Esta guía explica cómo configurar el sistema para que el cliente lo abra con un solo clic.
+
+-----------------------------------------------------------
+PASOS PREVIOS A REALIZAR UNA SOLA VEZ (Instalación):
+-----------------------------------------------------------
+1. Abre la terminal en esta carpeta del proyecto y compila el código ejecutando:
+   npm run build
+   (Esto creará o actualizará una carpeta llamada "dist" con los archivos finales optimizados del sistema).
+
+2. Instala la herramienta de servidor web ligero "serve" de manera global en este equipo (requiere Node.js):
+   npm install -g serve
+
+
+-----------------------------------------------------------
+PASOS PARA EL CLIENTE (Crear el ejecutable de acceso rápido):
+-----------------------------------------------------------
+Para que el cliente pueda abrir el sistema fácilmente todos los días:
+
+1. Crea un archivo llamado "Abrir_Gym.bat" en la MISMA CARPETA principal de este proyecto (donde está package.json).
+2. Haz clic derecho sobre él, elige "Editar" (o ábrelo con el Bloc de notas) y pega el siguiente código dentro:
+
+@echo off
+echo Iniciando el servidor local del Gimnasio...
+start http://localhost:3000
+serve -s dist -p 3000
+
+3. Guarda los cambios.
+4. Para ahorrarle tiempo al cliente, haz clic derecho sobre "Abrir_Gym.bat", selecciona "Enviar a" -> "Escritorio (crear acceso directo)".
+
+¡Listo! A partir de ahora, el cliente solo tiene que hacer doble clic en el acceso directo de su escritorio todos los días y el sistema se abrirá automáticamente en su navegador en el puerto 3000 sin ver nada de "npm run dev".
